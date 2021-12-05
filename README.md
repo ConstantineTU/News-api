@@ -1,2 +1,1 @@
-# constantinetu-JSFE2021Q3
-Private repository for @constantinetu
+# news-JS
