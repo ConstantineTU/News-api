@@ -1,8 +1,10 @@
+import { IOptions } from "../../interfaces";
+
 class Loader {
-    constructor(baseLink, options) {
-        this.baseLink = baseLink;
-        this.options = options;
-    }
+    constructor(
+        public baseLink: string,
+        public options: Partial<IOptions>
+    ) { }
 
     getResp(
         { endpoint, options = {} },
@@ -24,7 +26,7 @@ class Loader {
     }
 
     makeUrl(options, endpoint) {
-        const urlOptions = { ...this.options, ...options };
+        const urlOptions: IOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key) => {

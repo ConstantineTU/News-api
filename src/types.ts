@@ -1,3 +1,5 @@
+
+
 export type ArticlesTypes = {
 	source: {
 		id: string
@@ -22,3 +24,4 @@ export type SourcesTypes = {
 	country: string
 }
 
+export type CallBack = <T>(data?: T) => void;
