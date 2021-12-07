@@ -4,6 +4,7 @@
         "airbnb-typescript/base",
         "plugin:prettier/recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "prettier"
     ],
     "plugins": [
@@ -25,6 +26,7 @@
     "rules": {
         "no-debugger": "off",
         "no-console": 0,
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "@typescript-eslint/rule-name": "error"
     }
 }
