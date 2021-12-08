@@ -2,7 +2,7 @@ import { IOptions, INewsAndSources } from '../../utilities/interfaces';
 import { ResponseStatus } from '../../utilities/enum';
 
 class Loader {
-    constructor(private baseLink: string, private options: IOptions) {}
+    constructor(private baseLink: string, private options: Readonly<IOptions>) {}
 
     public getResp(
         { endpoint, options = {} }: { endpoint: string; options?: IOptions },
