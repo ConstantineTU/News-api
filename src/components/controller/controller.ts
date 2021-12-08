@@ -1,9 +1,9 @@
 import AppLoader from './appLoader';
-import { CallBack } from '../../types';
-import { INewsAndSources } from '../../interfaces';
+import { CallBack } from '../../utilities/types';
+import { INewsAndSources } from '../../utilities/interfaces';
 
 class AppController extends AppLoader {
-    getSources(callback: CallBack) {
+    public getSources(callback: CallBack) {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -12,7 +12,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Event, callback: ((data?: Partial<INewsAndSources>) => void)) {
+    public getNews(e: Event, callback: ((data?: Partial<INewsAndSources>) => void)) {
         let target = e.target as HTMLElement;
         const newsContainer = e.currentTarget as HTMLElement;
 

@@ -1,6 +1,6 @@
 import News from './news/news';
 import Sources from './sources/sources';
-import { INewsAndSources } from '../../interfaces';
+import { INewsAndSources } from '../../utilities/interfaces';
 
 export class AppView {
     news: News;
@@ -11,12 +11,12 @@ export class AppView {
         this.sources = new Sources();
     }
 
-    drawNews(data?: Partial<INewsAndSources>) {
+    public drawNews(data?: Partial<INewsAndSources>) {
         const values = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }
 
-    drawSources(data?: Partial<INewsAndSources>) {
+    public drawSources(data?: Partial<INewsAndSources>) {
         const values = data?.sources ? data?.sources : [];
         this.sources.draw(values);
     }
