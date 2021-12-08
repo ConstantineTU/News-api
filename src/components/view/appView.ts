@@ -4,6 +4,7 @@ import { INewsAndSources } from '../../utilities/interfaces';
 
 export class AppView {
     news: News;
+
     sources: Sources;
 
     constructor() {

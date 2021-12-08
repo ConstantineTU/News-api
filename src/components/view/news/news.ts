@@ -21,11 +21,7 @@ class News {
             metaAuthor.textContent = item.author || item.source.name;
 
             const metaDate = newsClone.querySelector('.news__meta-date') as HTMLTemplateElement;
-            metaDate.textContent = item.publishedAt
-                .slice(0, 10)
-                .split('-')
-                .reverse()
-                .join('-');
+            metaDate.textContent = item.publishedAt.slice(0, 10).split('-').reverse().join('-');
 
             const descriptionTitle = newsClone.querySelector('.news__description-title') as HTMLTemplateElement;
             descriptionTitle.textContent = item.title;

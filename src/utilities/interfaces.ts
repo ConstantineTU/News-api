@@ -1,10 +1,12 @@
-import { ArticlesTypes, SourcesTypes } from "./types";
+import { ArticlesTypes, SourcesTypes } from './types';
 
 export interface INewsAndSources {
-	sources: Array<SourcesTypes>
-	articles: Array<ArticlesTypes>
+    status: string;
+    totalResults: number;
+    sources: Array<SourcesTypes>;
+    articles: ArticlesTypes[];
 }
 
 export interface IOptions {
-	[key: string]: string;
+    [key: string]: string;
 }

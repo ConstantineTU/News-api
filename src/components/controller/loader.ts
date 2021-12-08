@@ -1,11 +1,7 @@
-import { IOptions } from "../../utilities/interfaces";
-import { INewsAndSources } from '../../utilities/interfaces';
+import { IOptions, INewsAndSources } from '../../utilities/interfaces';
 
 class Loader {
-    constructor(
-        private baseLink: string,
-        private options: IOptions
-    ) { }
+    constructor(private baseLink: string, private options: IOptions) {}
 
     public getResp(
         { endpoint, options = {} }: { endpoint: string; options?: IOptions },
@@ -22,18 +18,15 @@ class Loader {
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
-
         return res;
     }
 
     public makeUrl(options: IOptions, endpoint: string) {
         const urlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
-
         Object.keys(urlOptions).forEach((key) => {
             url += `${key}=${urlOptions[key]}&`;
         });
-
         return url.slice(0, -1);
     }
 
