@@ -23,6 +23,16 @@ class Sources {
 
         sources.append(fragment);
     }
+
+    public showSources() {
+        const burger = document.getElementById('burger') as HTMLElement;
+        const titleWrap = document.getElementById('title-wrap') as HTMLElement;
+        const sources = document.getElementById('sources') as HTMLElement;
+        titleWrap.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            sources.classList.toggle('active');
+        });
+    }
 }
 
 export default Sources;

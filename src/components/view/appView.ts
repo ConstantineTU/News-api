@@ -21,6 +21,16 @@ export class AppView {
         const values = data?.sources ? data?.sources : [];
         this.sources.draw(values);
     }
+
+    public startBurger() {
+        const sources = document.getElementById('sources') as HTMLElement;
+        const burger = document.getElementById('burger') as HTMLElement;
+        window.addEventListener('load', () => {
+            sources.classList.add('active');
+            burger.classList.add('active');
+        });
+        this.sources.showSources();
+    }
 }
 
 export default AppView;

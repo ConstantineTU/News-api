@@ -9,9 +9,13 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-height: 100vh;
 }
 .main {
+    position: relative;
     height: 100%;
+
+    display: flex;
     flex: 1 1 auto;
 }
 header {
@@ -80,4 +84,179 @@ footer .footer__copyright:before {
 }
 .footer__rss:hover {
     opacity: 1;
+}
+
+.burger-wrap {
+    position: relative;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: left 0.5s;
+}
+.burger {
+    position: absolute;
+    top: calc(50% - 1.5px);
+    left: 0;
+    width: 100%;
+    background: #e8e8e8;
+    height: 3px;
+    transition: left 0.5s;
+}
+.burger-wrap::after {
+    content: "";
+    bottom: 5px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    background: #e8e8e8;
+    height: 3px;
+    transition: left 0.5s;
+}
+.burger-wrap::before {
+    content: "";
+    top: 5px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    background: #e8e8e8;
+    height: 3px;
+    transition: left 0.5s;
+}
+.burger-wrap::hover {
+}
+.burger-wrap:hover::before {
+    left: -10px;
+}
+.burger-wrap:hover .burger {
+    left: -15px;
+}
+.burger-wrap:hover::after {
+    left: -20px;
+}
+.title-wrap {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+}
+.title {
+    padding: 0px 0px 0px 15px;
+}
+.title:hover {
+    cursor: pointer;
+}
+.title:hover ~ .burger-wrap::before {
+    left: -10px;
+}
+
+.title:hover ~ .burger-wrap .burger {
+    left: -15px;
+}
+.title:hover ~ .burger-wrap::after {
+    left: -20px;
+}
+
+.burger-wrap.active .burger {
+    transition: left 2.5s;
+    left: -350px;
+}
+.burger-wrap.active::after {
+    transition: left 2.5s;
+    left: -450px;
+}
+.burger-wrap.active::before {
+    transition: left 2.5s;
+    left: -250px;
+}
+
+.burger-wrap.active:hover::before {
+    left: -250px;
+}
+.burger-wrap.active:hover .burger {
+    left: -350px;
+}
+.burger-wrap.active:hover::after {
+    left: -450px;
+}
+
+.title:hover ~ .burger-wrap.active::before {
+    left: -250px;
+}
+
+.title:hover ~ .burger-wrap.active .burger {
+    left: -350px;
+}
+.title:hover ~ .burger-wrap.active::after {
+    left: -450px;
+}
+
+.burger-close-top {
+    content: "";
+    top: -75px;
+    right: 100px;
+    position: absolute;
+    width: 100%;
+    background: #e8e8e8;
+    height: 3px;
+    transition: right 1s, top 1s, transform 0.4s;
+
+    transform: rotate(-135deg);
+}
+
+.burger-close-bottom {
+    content: "";
+    top: -75px;
+    left: 100px;
+    position: absolute;
+    width: 100%;
+    background: #e8e8e8;
+    height: 3px;
+    transition: left 1.5s, top 1.5s, transform 0.4s;
+    transform: rotate(135deg);
+}
+
+.burger-wrap.active .burger-close-top {
+    top: 20px;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    background: #e8e8e8;
+    height: 3px;
+    transform: rotate(-135deg);
+    transition: right 1.5s, top 1.5s, transform 0.4s;
+}
+
+.burger-wrap.active .burger-close-bottom {
+    top: 20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    background: #e8e8e8;
+    height: 3px;
+    transition: left 1s, top 1s, transform 0.4s;
+    transform: rotate(135deg);
+}
+/* 
+.title:hover ~ .burger-wrap.active .burger-close-top {
+    transform: rotate(-135deg) scale(1.1);
+}
+
+.title:hover ~ .burger-wrap.active .burger-close-bottom {
+    transform: rotate(135deg) scale(1.1);
+} */
+
+@media (max-width: 1024px) {
+    header {
+        padding: 10px 10px;
+    }
+    .title {
+        font-size: 32px;
+        margin: 0px 0px;
+    }
+    footer {
+        height: 70px;
+    }
+}
+@media (max-width: 500px) {
 }
