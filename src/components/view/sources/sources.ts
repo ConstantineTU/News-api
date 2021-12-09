@@ -33,6 +33,17 @@ class Sources {
             sources.classList.toggle('active');
         });
     }
+
+    public showBtnToTop() {
+        const toTopBtn = document.getElementById('top__btn') as HTMLElement;
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset >= 300) {
+                toTopBtn.classList.add('show');
+            } else if (window.pageYOffset < 300) {
+                toTopBtn.classList.remove('show');
+            }
+        });
+    }
 }
 
 export default Sources;

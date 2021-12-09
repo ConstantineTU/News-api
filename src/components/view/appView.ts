@@ -30,6 +30,7 @@ export class AppView {
             burger.classList.add('active');
         });
         this.sources.showSources();
+        this.sources.showBtnToTop();
     }
 }
 
